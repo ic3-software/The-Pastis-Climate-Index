@@ -1,0 +1,313 @@
+{
+	"report": {
+		"magic": "ic3sv7",
+		"guts": {
+			"revisionId": 54,
+			"customizations": {
+				"reportJS": "",
+				"reportCSS": ""
+			},
+			"defaults": {
+				"schemaName": "Meteo",
+				"themeUid": "ic3-statos",
+				"palette": {
+					"themeUid": "",
+					"colors": []
+				}
+			},
+			"layouts": {
+				"desktop": {
+					"layoutConfigId": "Statos Desktop Layout (Fixed)",
+					"layoutInfo": {
+						"pageCount": 1
+					},
+					"widgetBoxDef": {
+						"ww0": {
+							"widgetId": "ww0",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"templateId": "ic3.Table",
+							"visibility": "default",
+							"pageNb": 0,
+							"rectangle": {
+								"top": 128,
+								"left": 318,
+								"height": 820,
+								"width": 839
+							},
+							"positionOrder": 2,
+							"autoExpandContent": {}
+						},
+						"ww2": {
+							"widgetId": "ww2",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"templateId": "ic3.FilterPanel",
+							"visibility": "default",
+							"pageNb": 0,
+							"rectangle": {
+								"top": 298,
+								"left": 0,
+								"height": 650,
+								"width": 310.5
+							},
+							"positionOrder": 1,
+							"autoExpandContent": {},
+							"withHeader": false
+						},
+						"ww3": {
+							"widgetId": "ww3",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"templateId": "ic3.DatePicker",
+							"visibility": "default",
+							"pageNb": 0,
+							"rectangle": {
+								"top": 128,
+								"left": 0,
+								"height": 162,
+								"width": 310.5
+							},
+							"positionOrder": 0,
+							"autoExpandContent": {}
+						},
+						"ww4": {
+							"widgetId": "ww4",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"templateId": "ic3.FilterSlider",
+							"visibility": "default",
+							"pageNb": 0,
+							"rectangle": {
+								"top": 0,
+								"left": 0,
+								"height": 120,
+								"width": 1157
+							},
+							"positionOrder": 3,
+							"autoExpandContent": {}
+						}
+					},
+					"widgetHeaderDef": {
+						"ww0": {
+							"widgetId": "ww0",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"$-title": "Temperatures of @{year} compared to @{period}"
+						},
+						"ww2": {
+							"widgetId": "ww2",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"$-title": "Filter Panel"
+						},
+						"ww3": {
+							"widgetId": "ww3",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"$-title": "Reference Period"
+						},
+						"ww4": {
+							"widgetId": "ww4",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"$-title": "Comparison Year"
+						}
+					},
+					"widgetDef": {
+						"ww0": {
+							"widgetId": "ww0",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"templateId": "ic3.Table",
+							"dataRenderOptions": {
+								"chartOptions": {
+									"columnSizes_FLUID": "50",
+									"columnSizing": "FIXED",
+									"columnSizes_FIXED": "119,60,60,60,60,60,60,60,60,60,60,60,60",
+									"tableSize": "small"
+								}
+							},
+							"eventMapper": {},
+							"widgetActions": {},
+							"globalFilter": {}
+						},
+						"ww2": {
+							"widgetId": "ww2",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"templateId": "ic3.FilterPanel",
+							"dataRenderOptions": {
+								"chartOptions": {
+									"initialFilterConfig": "{\n  \"items\": [\n    {\n      \"id\": 1,\n      \"fieldId\": \"[Station].[Station].[Name]\",\n      \"filter\": {\n        \"operator\": \"IS_ANY_OF\",\n        \"items\": [\n          {\n            \"mdxValue\": \"[Station].[Station].[Name].&[30189001]\",\n            \"name\": \"NIMES-COURBESSAC\"\n          }\n        ],\n        \"value\": \"nimes\"\n      }\n    }\n  ]\n}"
+								}
+							},
+							"eventMapper": {},
+							"widgetActions": {},
+							"globalFilter": {}
+						},
+						"ww3": {
+							"widgetId": "ww3",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"templateId": "ic3.DatePicker",
+							"dataRenderOptions": {
+								"chartOptions": {
+									"rangePicker": true,
+									"emptyBehaviour": "NOT_ALLOW_EMPTY",
+									"initialDate": "1 Jan 1990",
+									"initialEndDate": "31 Dec 2020"
+								}
+							},
+							"eventMapper": {
+								"Publish-onChange": "period"
+							},
+							"widgetActions": {},
+							"globalFilter": {}
+						},
+						"ww4": {
+							"widgetId": "ww4",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"templateId": "ic3.FilterSlider",
+							"dataRenderOptions": {
+								"chartOptions": {
+									"markLabelEach": 25,
+									"selectionLabel": "{0}"
+								}
+							},
+							"eventMapper": {
+								"Publish-Selection": "year"
+							},
+							"widgetActions": {},
+							"globalFilter": {},
+							"navigationSetting": {
+								"tidySelectionOptions": {
+									"selectionEmptyBehaviour": "NOT_ALLOW_EMPTY",
+									"initSelectionUserDefined": "2025"
+								}
+							}
+						}
+					},
+					"widgetQueryDef": {
+						"ww0": {
+							"widgetId": "ww0",
+							"templateId": "ic3.Table",
+							"queryStatement": {
+								"type": "mdx",
+								"queryType": 0,
+								"userDefinedMdx": "with \n\n  -- static set [Period] as { [Time].[Time].[Year].[1991] : [Time].[Time].[Year].[2020] } \n  static set [Period] as @{period!∅}\n\n  [T_Avg_Daily] as \n      ( [Measures].[Temperature (max.)] + [Measures].[Temperature (min.)] ) / 2\n      , FORMAT_STRING=\".#\"\n            \n  [T_Avg_Period] as \n      -- avg( [Period], ( [Measures].[Temperature (max.)] + [Measures].[Temperature (min.)] ) / 2 )\n      avg( [Period], [T_Avg_Daily] )\n      , FORMAT_STRING=\".#\"\n            \n  [T_Avg_Diff] as \n      IIF( isEmpty( [T_Avg_Daily] ), null, [T_Avg_Daily] - [T_Avg_Period] )\n\nselect\n  [Time].[Months].[Months] on 0\n  [Time].[Days of Months].[Days of Months] on 1\n  \n  from [Observations]\n\nwhere [T_Avg_Diff]\n\nfilterby @{year!∅}\n-- filterby [Station].[Station].[Name].&[30189001] -- Nîmes Courbessac\n"
+							},
+							"globalFilter": {
+								"globalFilterQuery": "@{ic3-global-filter!}"
+							},
+							"queryTransformDef": {
+								"steps": [
+									{
+										"transformationId": "ic3.TransformationColorConditionalJS",
+										"options": {
+											"transformationEnabled": true,
+											"palette": null,
+											"columns": [
+												"@IC3_ALL_NUMERIC"
+											],
+											"colorExpr": "if ( $_currentCell$ >= 5 ) return 'heatmap2.8';\nif ( $_currentCell$ >= 2.5 ) return 'heatmap2.7';\nif ( $_currentCell$ > 0.1 ) return 'heatmap2.6';\n\nif ( $_currentCell$ <= -5 ) return 'heatmap2.1';\nif ( $_currentCell$ <= -2.5 ) return 'heatmap2.2';\nif ( $_currentCell$ < -0.1 ) return 'heatmap2.3';\n\n\nreturn '#f0f0f0';"
+										}
+									}
+								]
+							}
+						},
+						"ww3": {
+							"widgetId": "ww3",
+							"templateId": "ic3.DatePicker",
+							"queryStatement": {
+								"type": "mdx",
+								"queryType": 1,
+								"userDefinedMdx": "/*\nIf the widget options are defining min/max/initial dates,\nuse an empty CSV (Table Definition) data source instead.\n\n\nRetrieving the value min/max date from the server:\n\nselect\n  date-hierarchy.lastLevel.head(1)   // date min. \n  + date-hierarchy.lastLevel.tail(1) // date max. \n  + date-hierarchy-member            // optional: initial date \n  + date-hierarchy-member            // optional: initial end date (range) \n  + date-hierarchy-member            // optional: anchor date \n\non 0 from [cube-name]\ncell properties cell_ordinal\n*/",
+								"builder": {
+									"axis": [
+										{
+											"axisName": "dates",
+											"addNonEmpty": false,
+											"items": [
+												{
+													"mdxEntity": {
+														"dimensionUName": "[Time]",
+														"hierarchyUName": "[Time].[Time]",
+														"uniqueName": "[Time].[Time].[Year]",
+														"caption": "Year",
+														"type": "LL",
+														"childrenCount": 246
+													},
+													"decorations": []
+												}
+											]
+										}
+									],
+									"cubeName": "Observations"
+								}
+							},
+							"globalFilter": {
+								"globalFilterQuery": "@{ic3-global-filter!}"
+							}
+						},
+						"ww4": {
+							"widgetId": "ww4",
+							"templateId": "ic3.FilterSlider",
+							"queryStatement": {
+								"type": "mdx",
+								"queryType": 1,
+								"userDefinedMdx": "/*\nselect \n  member-set-expression\n\non 0 from [cube-name]\ncell properties cell_ordinal\n*/",
+								"builder": {
+									"axis": [
+										{
+											"axisName": "MdxBuilderFilterItems",
+											"addNonEmpty": false,
+											"items": [
+												{
+													"mdxEntity": {
+														"dimensionUName": "[Time]",
+														"hierarchyUName": "[Time].[Time]",
+														"uniqueName": "[Time].[Time].[Year]",
+														"caption": "Year",
+														"type": "LL",
+														"childrenCount": 246
+													},
+													"decorations": []
+												}
+											]
+										}
+									],
+									"cubeName": "Observations"
+								}
+							},
+							"globalFilter": {
+								"globalFilterQuery": "@{ic3-global-filter!}"
+							}
+						}
+					},
+					"widgetExtraOptions": {
+						"ww0": {},
+						"ww2": {},
+						"ww3": {},
+						"ww4": {}
+					},
+					"widgetGadgetDefs": {},
+					"rights": {
+						"ww0": 37,
+						"ww1": 37,
+						"ww2": 37,
+						"ww3": 37,
+						"ww4": 37
+					}
+				}
+			},
+			"refresh": {
+				"active": false,
+				"mode": "AUTO_REFRESH"
+			}
+		},
+		"reportInfo": {
+			"options": {
+				"path": "shared:/Meteo/Climate : 1990-2020"
+			},
+			"name": "Climate : 1990-2020",
+			"path": "shared:/Meteo/Climate : 1990-2020",
+			"pathAudit": "/shared/Meteo/Climate : 1990-2020",
+			"parentPath": "shared:/Meteo",
+			"perms": "WRITE",
+			"patches": {
+				"reportDef": [],
+				"theme": []
+			}
+		}
+	}
+}

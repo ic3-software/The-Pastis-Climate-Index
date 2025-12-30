@@ -1,0 +1,162 @@
+{
+	"report": {
+		"magic": "ic3sv7",
+		"guts": {
+			"revisionId": 24,
+			"customizations": {
+				"reportJS": "",
+				"reportCSS": ""
+			},
+			"defaults": {
+				"schemaName": "Meteo",
+				"themeUid": "ic3-statos",
+				"palette": {
+					"themeUid": "",
+					"colors": []
+				}
+			},
+			"layouts": {
+				"desktop": {
+					"layoutConfigId": "Statos Desktop Layout (Fixed)",
+					"layoutInfo": {
+						"pageCount": 1
+					},
+					"widgetBoxDef": {
+						"ww0": {
+							"widgetId": "ww0",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"templateId": "amCharts4.AmCharts4RegularColumnChart",
+							"visibility": "default",
+							"pageNb": 0,
+							"rectangle": {
+								"top": 0,
+								"left": 318,
+								"height": 460,
+								"width": 832
+							},
+							"positionOrder": 2,
+							"autoExpandContent": {}
+						},
+						"ww1": {
+							"widgetId": "ww1",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"templateId": "ic3.FilterPanel",
+							"visibility": "default",
+							"pageNb": 0,
+							"rectangle": {
+								"top": 0,
+								"left": 0,
+								"height": 460,
+								"width": 310.5
+							},
+							"positionOrder": 0,
+							"autoExpandContent": {}
+						}
+					},
+					"widgetHeaderDef": {
+						"ww0": {
+							"widgetId": "ww0",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"$-title": "#Days >= 35"
+						},
+						"ww1": {
+							"widgetId": "ww1",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"$-title": "Station"
+						}
+					},
+					"widgetDef": {
+						"ww0": {
+							"widgetId": "ww0",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"templateId": "amCharts4.AmCharts4RegularColumnChart",
+							"dataRenderOptions": {
+								"chartOptions": {
+									"chartCursorEnabled": true
+								}
+							},
+							"eventMapper": {},
+							"widgetActions": {},
+							"globalFilter": {}
+						},
+						"ww1": {
+							"widgetId": "ww1",
+							"widgetClassID": "ic3.ChartTemplateAdapter",
+							"templateId": "ic3.FilterPanel",
+							"dataRenderOptions": {
+								"chartOptions": {
+									"initialFilterConfig": "{\n  \"items\": [\n    {\n      \"id\": 1,\n      \"fieldId\": \"[Station].[Station].[Name]\",\n      \"filter\": {\n        \"operator\": \"IS_ANY_OF\",\n        \"items\": [\n          {\n            \"mdxValue\": \"[Station].[Station].[Name].&[30189001]\",\n            \"name\": \"NIMES-COURBESSAC\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+								}
+							},
+							"eventMapper": {
+								"Publish-filterBy": "station"
+							},
+							"widgetActions": {},
+							"globalFilter": {}
+						}
+					},
+					"widgetQueryDef": {
+						"ww0": {
+							"widgetId": "ww0",
+							"templateId": "amCharts4.AmCharts4RegularColumnChart",
+							"queryStatement": {
+								"type": "mdx",
+								"queryType": 0,
+								"userDefinedMdx": "with \n  [Measures].[#Days] as count( filter( descendants( [Time].[Time].currentMember, [Time].[Time].[Day], SELF ), [Measures].[Temperature (max.)] >= 35 ))\n  [Measures].[#Days >= 35] as IIF( [Measures].[#Days] > 0, [Measures].[#Days], null)\n\nselect\n  [Measures].[#Days >= 35] on 0\n  [Time].[Time].[Year] on 1\n\n  from [Observations]\n\nfilterby @{station}\nfilterby {[Time].[Time].[Year].&[1950-01-01T00:00:00.000]:[Time].[Time].[Year].&[2025-01-01T00:00:00.000]}"
+							},
+							"globalFilter": {
+								"globalFilterQuery": "@{ic3-global-filter!}"
+							},
+							"queryTransformDef": {
+								"steps": [
+									{
+										"transformationId": "ic3.TransformationColorSingle",
+										"options": {
+											"transformationEnabled": true,
+											"columns": [
+												{
+													"name": "#Days >= 35"
+												}
+											],
+											"color": {
+												"path": "secondary"
+											}
+										}
+									}
+								]
+							}
+						}
+					},
+					"widgetExtraOptions": {
+						"ww0": {},
+						"ww1": {}
+					},
+					"widgetGadgetDefs": {},
+					"rights": {
+						"ww0": 37,
+						"ww1": 37,
+						"ww2": 37
+					}
+				}
+			},
+			"refresh": {
+				"active": false,
+				"mode": "AUTO_REFRESH"
+			}
+		},
+		"reportInfo": {
+			"options": {
+				"path": "shared:/Meteo/#Days 35"
+			},
+			"name": "#Days 35",
+			"path": "shared:/Meteo/#Days 35",
+			"pathAudit": "/shared/Meteo/#Days 35",
+			"parentPath": "shared:/Meteo",
+			"perms": "WRITE",
+			"patches": {
+				"reportDef": [],
+				"theme": []
+			}
+		}
+	}
+}
