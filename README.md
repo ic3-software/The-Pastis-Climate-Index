@@ -1,0 +1,16 @@
+**Multi-dimensional analysis of Météo-France data to settle the "Back in my days" apéro debate once and for all.**
+
+![Temperatures of 2025 compared to 1980-2000](./images/dashboard.png)
+
+Living in the South of France, you are biologically required to endure a loop of small talk about the heat.
+`The-Pastis-Climate-Index` project is the professional-grade solution for the data-driven resident who is tired 
+of nodding politely. It provides the tools to extract, model, and visualize over 400 million rows of French 
+meteorological history, turning anecdotal nostalgia into undeniable proof.
+
+- **Ammunition**: 400M+ Rows (Météo-France data stretching back to 1780)
+- **Weapon** : MDX (Multi-dimensional analysis)
+- **Machinery** : icCube (OLAP engine)
+
+Use it responsibly, preferably with a glass of Pastis in hand. Cheers!
+
+_
