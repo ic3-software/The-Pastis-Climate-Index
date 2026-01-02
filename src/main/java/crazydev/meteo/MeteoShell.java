@@ -58,10 +58,10 @@ public class MeteoShell
     {
         MeteoLog4jUtils.configure(Level.DEBUG);
 
-        // 2024-2025
+        // 2025-2026
         downloadLatest();
 
-        // 2020-2023
+        // 2020-2024
         downloadPrevious();
 
         // Before 2020

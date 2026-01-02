@@ -21,9 +21,9 @@ public class MeteoH
     //
     // -----------------------------------------------------------------------------------------------------------------
 
-    public static final String URL_LATEST = "https://object.files.data.gouv.fr/meteofrance/data/synchro_ftp/BASE/HOR/H_$DEPT$_latest-2024-2025.csv.gz";
+    public static final String URL_LATEST = "https://object.files.data.gouv.fr/meteofrance/data/synchro_ftp/BASE/HOR/H_$DEPT$_latest-2025-2026.csv.gz";
 
-    public static final String URL_PREVIOUS = "https://object.files.data.gouv.fr/meteofrance/data/synchro_ftp/BASE/HOR/H_$DEPT$_previous-2020-2023.csv.gz";
+    public static final String URL_PREVIOUS = "https://object.files.data.gouv.fr/meteofrance/data/synchro_ftp/BASE/HOR/H_$DEPT$_previous-2020-2024.csv.gz";
 
     public static final String URL_HISTORIC = "https://object.files.data.gouv.fr/meteofrance/data/synchro_ftp/BASE/HOR/H_$DEPT$_$PERIOD$.csv.gz";
 
@@ -66,8 +66,8 @@ public class MeteoH
             "1800-1809", "1810-1819", "1820-1829", "1830-1839", "1840-1849", "1850-1859", "1860-1869", "1870-1879", "1880-1889", "1890-1899",
             "1900-1909", "1910-1919", "1920-1929", "1930-1939", "1940-1949", "1950-1959", "1960-1969", "1970-1979", "1980-1989", "1990-1999",
             "2000-2009", "2010-2019",
-            "previous-2020-2023",
-            "latest-2024-2025",
+            "previous-2020-2024",
+            "latest-2025-2026",
 
             };
 
@@ -98,7 +98,7 @@ public class MeteoH
     {
         return Path.of(
                 folder, "latest", MeteoUtils.asDD(department),
-                "H_" + MeteoUtils.asDD(department) + "_latest-2024-2025.csv.gz"
+                "H_" + MeteoUtils.asDD(department) + "_latest-2025-2026.csv.gz"
         );
     }
 
@@ -106,7 +106,7 @@ public class MeteoH
     {
         return Path.of(
                 folder, "previous", MeteoUtils.asDD(department),
-                "H_" + MeteoUtils.asDD(department) + "_previous-2020-2023.csv.gz"
+                "H_" + MeteoUtils.asDD(department) + "_previous-2020-2024.csv.gz"
         );
     }
 
