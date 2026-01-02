@@ -7,12 +7,12 @@ Living in the South of France, you are biologically required to endure a loop of
 of nodding politely. It provides the tools to extract, model, and visualize over 400 million rows of French
 meteorological history, turning anecdotal nostalgia into undeniable proof.
 
-|            |                                                        |
-|:-----------|:-------------------------------------------------------|
-| Ammunition | 400M+ Rows (Météo-France data stretching back to 1780) |
-| Weapon     | MDX (Multi-dimensional analysis)                       |
-| Machinery  | icCube (OLAP engine)                                   |
-|            |                                                        |
+|            |                                                                                                                                       |
+|:-----------|:--------------------------------------------------------------------------------------------------------------------------------------|
+| Ammunition | [400M+ Rows](https://www.data.gouv.fr/datasets/donnees-climatologiques-de-base-horaires/) (Météo-France data stretching back to 1780) |
+| Weapon     | [MDX](https://doc.iccube.com/?ic3topic=server.mdx.index) (Multi-dimensional analysis)                                                 |
+| Machinery  | [icCube](https://www.iccube.com/) (OLAP engine)                                                                                       |
+|            |                                                                                                                                       |
 
 **Use it responsibly, preferably with a glass of Pastis in hand. Cheers!**
 
