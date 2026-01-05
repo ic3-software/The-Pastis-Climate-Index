@@ -4,7 +4,7 @@
 
 Living in the South of France, you are biologically required to endure a loop of small talk about the heat.
 `The-Pastis-Climate-Index` project is the professional-grade solution for the data-driven resident who is tired
-of nodding politely. It provides the tools to extract, model, and visualize over 400 million rows of French
+of nodding politely. It provides the tools to extract, model, and visualize over 500 million rows of French
 meteorological history, turning anecdotal nostalgia into undeniable proof.
 
 |            |                                                                                                                                       |
