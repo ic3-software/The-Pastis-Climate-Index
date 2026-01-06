@@ -9,7 +9,7 @@ meteorological history, turning anecdotal nostalgia into undeniable proof.
 
 |            |                                                                                                                                       |
 |:-----------|:--------------------------------------------------------------------------------------------------------------------------------------|
-| Ammunition | [400M+ Rows](https://www.data.gouv.fr/datasets/donnees-climatologiques-de-base-horaires/) (Météo-France data stretching back to 1780) |
+| Ammunition | [500M+ Rows](https://www.data.gouv.fr/datasets/donnees-climatologiques-de-base-horaires/) (Météo-France data stretching back to 1780) |
 | Weapon     | [MDX](https://doc.iccube.com/?ic3topic=server.mdx.index) (Multi-dimensional analysis)                                                 |
 | Machinery  | [icCube](https://www.iccube.com/) (OLAP engine)                                                                                       |
 |            |                                                                                                                                       |
