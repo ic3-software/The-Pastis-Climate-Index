@@ -41,3 +41,9 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Phyton ###
+/norway/.venv/
+/norway/.env
+__pycache__/
+*.pyc
