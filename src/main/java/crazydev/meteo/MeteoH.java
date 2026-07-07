@@ -21,11 +21,11 @@ public class MeteoH
     //
     // -----------------------------------------------------------------------------------------------------------------
 
-    public static final String URL_LATEST = "https://object.files.data.gouv.fr/meteofrance/data/synchro_ftp/BASE/HOR/H_$DEPT$_latest-2025-2026.csv.gz";
+    public static final String URL_LATEST = "https://meteofrance.s3.sbg.io.cloud.ovh.net/data/synchro_ftp/BASE/HOR/H_$DEPT$_latest-2025-2026.csv.gz";
 
-    public static final String URL_PREVIOUS = "https://object.files.data.gouv.fr/meteofrance/data/synchro_ftp/BASE/HOR/H_$DEPT$_previous-2020-2024.csv.gz";
+    public static final String URL_PREVIOUS = "https://meteofrance.s3.sbg.io.cloud.ovh.net/data/synchro_ftp/BASE/HOR/H_$DEPT$_previous-2020-2024.csv.gz";
 
-    public static final String URL_HISTORIC = "https://object.files.data.gouv.fr/meteofrance/data/synchro_ftp/BASE/HOR/H_$DEPT$_$PERIOD$.csv.gz";
+    public static final String URL_HISTORIC = "https://meteofrance.s3.sbg.io.cloud.ovh.net/data/synchro_ftp/BASE/HOR/H_$DEPT$_$PERIOD$.csv.gz";
 
     // numéro Météo-France du poste sur 8 chiffres
     public static final int F_NUM_POSTE = 0;
